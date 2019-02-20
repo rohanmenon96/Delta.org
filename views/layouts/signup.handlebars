@@ -1,0 +1,46 @@
+<html>
+<head></head>
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<body class="containerwallpaper">
+  <link rel="stylesheet" href="../views/css/signup.css">
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container" id="wrap">
+  <div style="margin-top:20px" class="row">
+    </div>
+	  <div class="row">
+        <div class="signup col-md-6 col-md-offset-3">
+            <form action="/signup" method="post" accept-charset="utf-8" class="form" role="form">
+              <legend></legend>
+               <legend>Sign Up</legend>
+                    <h4 style="color:black">It's free and always will be.</h4>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6">
+                            <input type="text" name="name" id="name" value="" class="form-control input-lg" placeholder="First Name"  />                        </div>
+                        <div class="col-xs-6 col-md-6">
+                            <input type="text" name="lastname" value="" class="form-control input-lg" placeholder="Last Name"  />                        </div>
+                    </div>
+                    <input style="margin-top:20px" type="text" name="email" value="" class="form-control input-lg email" placeholder="Your Email" required/>
+                    <input style="margin-top:20px" type="password" name="password" value="" class="form-control input-lg password" placeholder="Password" required/>
+                    <input style="margin-top:20px" type="password" name="confirm_password" value="" class="form-control input-lg confirmPassword" placeholder="Confirm Password" required />
+                    <input style="margin-top:20px" maxlength="10" name="contact" id="contact" value="" class="form-control input-lg contact" placeholder="Contact Number" required />
+                    <div class="row">
+                        <div class="col-xs-4 col-md-4">
+                          <input style="margin-top:20px" type="text" name="age" value="" class="form-control input-lg age" placeholder="Age"  />
+                        </div>
+                    </div>
+                    <br/>
+                    <br />
+                    <div class="form-group">
+                    <button class="btn btn-primary" type="submit">
+                        Create my account</button>
+                        </div>
+            </form>
+          </div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+.card {
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+        margin-top:20px;
+}
+.containerwallpaper {
+    background-image: url("../Images/shapes-abstract-typography.jpg");
+    background-position: center;
+    background-size: cover;
+}

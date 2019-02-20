@@ -1,0 +1,9 @@
+.containerwallpaper {
+    background-image: url("../Images/shapes-abstract-typography.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.container.mainBody{
+  margin-top:5%;
+  background-color: white;
+}

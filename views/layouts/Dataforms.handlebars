@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		    <title></title>
+  </head>
+  <body background = "../views/Images/Blue-polygonal-background.jpg">
+		<header>
+
+			 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Deltas</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Deltas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Deltas</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav my-1 my-lg-0" style="padding-right:2em">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            User
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/profile">My Profile</a>
+                            <a class="dropdown-item" href="/logout">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+		</header>
+	<hr>
+    <div class="container py-5">
+				<div class="row">
+						<div class="col-md-12">
+								<div class="row">
+										<!--/col-->
+										<div class="col-md-8 offset-md-2">
+												<!-- form user info -->
+												<div class="card card-outline-secondary">
+														<div class="card-header">
+																<h3 class="mb-0">Detailed Delta Information</h3>
+														</div>
+														<div class="card-body">
+																<form class="form" role="form" autocomplete="off" method="post">
+																		<div class="form-group row"> <!-- Description -->
+																			<label for="description_id" class="col-lg-3 col-form-label form-control-label">Description :</label>
+																			<br/>
+																			<p style="margin-left: 1rem">{{requestObj.description}}</p>
+																		</div>
+																		
+																		<div class="form-group row"> <!-- Allotted -->
+																			<label for="allotted_id" class="col-lg-8 col-form-label form-control-label">Type : 
+																				{{#if requestObj.isSuggestion}}
+																					Suggestion
+																				{{else}}
+																					Complain
+																				{{/if}}
+																				</label>
+																		</div>
+
+																		<div class="form-group row"> <!-- Allotted -->
+																				<label for="allotted_id" class="col-lg-3 col-form-label form-control-label">Allotted :</label>
+																				<div class="col-lg-9">
+																						<input type="text" class="form-control" id="allotted_id" name="allotted" placeholder="Allotted Details">
+																				</div>
+																		</div>
+
+																		<input type="hidden" name="id" id="id" value={{requestObj._id}}>
+
+																		<div class="form-group row"> <!-- Estimated Time-->
+																				<label for="estimated_id" class="col-lg-3 col-form-label form-control-label">Estimated Time :</label>
+																				<div class="col-lg-9">
+																						<input type="date" class="form-control" id="estimated_id" name="estimated" max="3000-12-31" min="1000-01-01">
+																				</div>
+																		</div>
+																		{{!-- <div class="form-group row"> <!-- Actual Time-->
+																			<label for="actual_id" class="col-lg-3 col-form-label form-control-label">Actual Time :</label>
+																			<div class="col-lg-9">
+																					<input type="date" class="form-control" id="actual_id" name="actual" max="3000-12-31" min="1000-01-01">
+																			</div>
+																		</div> --}}
+																		<div class="form-group row"> <!-- Actual Time-->
+																			<label for="actual_id" class="col-lg-3 col-form-label form-control-label">Status:</label>
+																			<div class="col-lg-9">
+																					{{!-- <div class="dropdown">
+																						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																							Your status
+																						</button>
+																						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+																							<a class="dropdown-item" href="#">Created</a>
+																							<a class="dropdown-item" href="#">Reviewed</a>
+																							<a class="dropdown-item" href="#">In Progress</a>
+																							<a class="dropdown-item" href="#">Duplicate</a>
+																							<a class="dropdown-item" href="#">Completed</a>
+																						</div> --}}
+																						<select name="status">
+                                    														<option name= "status" id="status" value="Created">Created</option>
+                                    														<option name= "status" id="status" value="Reviewed">Reviewed</option>
+                                    														<option name= "status" id="status" value="InProgress">In Progress</option>
+                                    														<option name= "status" id="status" value="Duplicate">Duplicate</option>
+                                    														<option name= "status" id="status" value="Completed">Completed</option>
+                                														</select>
+																					{{!-- </div> --}}
+																			</div>
+																		</div>
+																		<div class="form-group row"> <!-- Reset/Submit-->
+																				<label class="col-lg-3 col-form-label form-control-label"></label>
+																				<div class="col-lg-9">
+																						<input type="reset" class="btn btn-secondary" value="Cancel">
+																						<input type="submit" class="btn btn-primary" value="Submit" formaction="/adminAlterReq">
+																				</div>
+																		</div>
+																</form>
+														</div>
+												</div>
+												<!-- /form user info -->
+												<hr>
+												<!-- form Comment -->
+												<div class="card card-outline-secondary">
+														<div class="card-header">
+																<h3 class="mb-0">Comment</h3>
+														</div>
+														<div class="card-body">
+																<form class="form" role="form" autocomplete="off">
+																		<div class="form-group row"> <!-- User Name -->
+																			<label for="user_name_id" class="col-lg-3 col-form-label form-control-label">User Name :</label>
+																			<p style="margin-left: 1rem; display:inline">This is an issue in something that we are talking about. This is an issue in something that we are talking about. This is an issue in something that we are talking about.</p>
+																		</div>
+																		<div class="form-group row"> <!-- Comment -->
+																		<div class="col-lg-4">
+																				<label for="comment_id" class="col-form-label form-control-label">Comment :</label>
+																		</div>
+																		<div class="col-lg-6">
+																				<textarea class="form-control" id="comment_id" name="comment" rows="3" placeholder=""></textarea>
+																		</div>
+																		</div>
+																		<div class="form-group row"> <!-- Reset/Submit-->
+																		<div class="col-lg-8">
+
+																		</div>
+																		<div class="col-lg-4">
+																						<input type="submit" class="btn btn-primary" value="Submit">		
+
+																		</div>
+																		</div>
+																</form>
+														</div>
+												</div>
+												<!-- /form Comment -->
+										</div>
+										<!--/col-->
+								</div>
+								<!--/row-->
+						</div>
+						<!--/col-->
+				</div>
+		</div>
+		<!--/container-->
+  </body>
+</html>

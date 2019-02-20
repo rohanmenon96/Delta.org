@@ -1,0 +1,79 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Delta</title>
+    <link rel="stylesheet" href="../views/css/site.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body background = "../views/Images/Blue-polygonal-background.jpg">
+    <header>
+        
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Deltas</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Deltas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Deltas</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav my-1 my-lg-0" style="padding-right:2em">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            User
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/profile">My Profile</a>
+                            <a class="dropdown-item" href="/logout">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+    <main>
+        {{!-- <div class="card">
+            <div class="card-body"> --}}
+                <h1 class="display-4 text-center" style="margin-top: 19px;">Deltas</h1>
+            {{!-- </div>
+        </div> --}}
+        <br/>
+		{{#each requests}}
+        <a href="/adminRequest?reqId={{_id}}" class="custom-card" style=" align-items: center ">
+            {{#if isSuggestion}}
+                <div class="card border-success mb-3 mt-3 mx-auto text-center w-75 " style="box-shadow:0px 0px 17px 0px #96e006">
+            {{else}}
+                <div class="card border-danger mb-3 mt-3 mx-auto text-center w-75 " style="box-shadow:0px 0px 17px 0px #e42a0c">
+            {{/if}}
+            <div>
+                    <div class="card-body">
+                        <div class="row">
+                        <div class="col-xl">
+                            <p class="card-text">{{description}} </p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted">
+                       {{institution}}
+                    </div>
+            </div>
+        </a>
+   
+     </div>
+ {{/each}}
+    </main>
+    <footer class="page-footer font-small indigo">
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+	</body>
+</html> 
+

@@ -1,0 +1,131 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Delta</title>
+    <link rel="stylesheet" href="../views/css/site.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body background = "../views/Images/Blue-polygonal-background.jpg">
+    <header>
+        
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Deltas</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Deltas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Deltas</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav my-1 my-lg-0" style="padding-right:2em">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            User
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/profile">My Profile</a>
+                            <a class="dropdown-item" href="/logout">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+    <main>
+        {{!-- <div class="card">
+            <div class="card-body"> --}}
+                <h1 class="display-4 text-center" style="margin-top: 19px;">Deltas</h1>
+            {{!-- </div>
+        </div> --}}
+        <br/>
+		{{#each requests}}
+        <a href="/request?reqId={{_id}}" class="custom-card" style=" align-items: center ">
+            {{#if isSuggestion}}
+                <div class="card border-success mb-3 mt-3 mx-auto text-center w-75 " style="box-shadow:0px 0px 17px 0px #96e006">
+            {{else}}
+                <div class="card border-danger mb-3 mt-3 mx-auto text-center w-75 " style="box-shadow:0px 0px 17px 0px #e42a0c">
+            {{/if}}
+                    <div class="card-body">
+                        <div class="row">
+                        <div class="col-xl">
+                            <p class="card-text">{{description}}</p>
+                        </div>
+                        <div class="col-sm">
+                        
+                        <div style="align-content:inherit;" class="float-right ">
+                            <a href="/upvote?id={{_id}}"><div class="up-arrow" ></div></a>
+                            <p style="line-height: 10px; margin-top: 4px ; margin-bottom: 0.25rem">{{diff}}</p>
+                            <a href="/downvote?id={{_id}}"><div class="down-arrow" ></div></a>
+                        </div>
+                        
+                        </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted">
+                        {{institution}}
+                    </div>
+            </div>
+        </a>
+		
+		{{/each}}
+
+        <a href="#" class="float" data-toggle="modal" data-target="#exampleModal">
+            <img style = "height: 100%;" src="../views/css/pen.png"/>
+        </a>
+
+ <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">New Request</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="description-name" class="col-form-label">Description:</label>
+                                <textarea  name= "description" id="description" class="form-control" id="request-text"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="institution-name" class="col-form-label">Institution:</label>
+                                <select name="orgId">
+                                    <option name= "orgId" id="orgId" value="1">Stevens Institute of Technology</option>
+                                    <option name= "orgId" id="orgId" value="2">JP Morgan</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Type:</label><br/>
+                                <input type="radio" name="isSuggestion"  value="true"> Suggestion<br>
+                                <input type="radio" name="isSuggestion"  value="false"> Complain  
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" formaction="/createRequest">Send Request</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+       
+
+      </div>
+
+    </main>
+    <footer class="page-footer font-small indigo">
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+	</body>
+</html> 

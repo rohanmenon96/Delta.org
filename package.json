@@ -1,0 +1,30 @@
+{
+  "name": "delta",
+  "version": "1.0.0",
+  "description": "A small project for DuckHacks and for the wellfare of the society.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SiddharthChoudhary/ImproveCommunication.git"
+  },
+  "author": "Rohan Menon, Hem Shah, Shrikant Sherkar, Siddarth Choudhary",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SiddharthChoudhary/ImproveCommunication/issues"
+  },
+  "homepage": "https://github.com/SiddharthChoudhary/ImproveCommunication#readme",
+  "dependencies": {
+    "bcrpyt": "^2.0.0",
+    "bcrypt": "^2.0.0",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.4",
+    "encodeurl": "^1.0.2",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "mongodb": "^3.1.13",
+    "uuid": "^3.3.2"
+  }
+}

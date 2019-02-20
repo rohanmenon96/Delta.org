@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>SignIn</title>
+</head>
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+<link rel="stylesheet" href="../views/css/signin.css">
+<body class="containerwallpaper">
+<div>
+<div class="row-sm-4">
+</div>
+<div class="row">
+	<div class="col-sm-4">
+	</div>
+	<div class="col-sm-4">
+<div class="card" style="border-radius:20px">
+	<div style="margin-left:105px">
+		<img class="logo" src="../views/Images/logo2.png">
+	</div>
+<article class="card-body">
+<a href="/signup" class="float-right btn btn-outline-dark">Sign up</a>
+<h4 class="card-title mb-4 mt-1">Sign in</h4>
+	 <form method= "POST">
+    <div class="form-group">
+    	<label>Your email</label>
+        <input name="email" id="email" class="form-control" placeholder="Email" type="email">
+    </div> <!-- form-group// -->
+    <div class="form-group">
+    	<a class="float-right" href="#">Forgot?</a>
+    	<label>Your password</label>
+        <input  name="password" id="password" class="form-control" placeholder="******" type="password">
+    </div> <!-- form-group// -->
+    {{#if hasErrors}}
+		<br><br><p class="badge badge-danger">{{errors}}</p>
+	{{/if}}
+    <div class="form-group">
+    <div class="checkbox">
+      <label> <input type="checkbox"> Save password </label>
+    </div> <!-- checkbox .// -->
+    </div> <!-- form-group// -->
+    <div class="form-group">
+        <button type="submit" class="btn btn-dark btn-block" action= "/login"> Login  </button>
+    </div> <!-- form-group// -->
+</form>
+</article>
+</div> <!-- card.// -->
+</div>
+</body>
+</html>

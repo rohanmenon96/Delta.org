@@ -1,0 +1,46 @@
+a.custom-card,
+a.custom-card:hover {
+  color: inherit;
+}
+
+.up-arrow {
+	border-color: green transparent;
+	border-style: solid;
+	border-width: 0px 10px 10px 10px;
+	height: 0px;
+	width: 0px;
+}
+
+.down-arrow {
+	border-color: red transparent;
+	border-style: solid;
+	border-width: 10px 10px 0px 10px;
+	height: 0px;
+	width: 0px;
+}
+
+.block_container
+{
+    text-align:center;
+}
+.bloc1, .bloc2
+{
+    display:inline;
+}
+
+.float{
+	position:fixed;
+	width:85px;
+	height:50px;
+	bottom:40px;
+	right:40px;
+	background-color:#212529;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	margin-top:22px;
+}
