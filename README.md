@@ -19,8 +19,13 @@ Execution Steps:
 (NodeJs and MongoDB required)
 
 Download the zip folder and extract it in any of your local folders
+
 Open command prompt and cd into the folder
+
 Type npm install
+
 Type npm start
+
 Open browser and route to localhost:3000
+
 You can now browse the website while creating your own id.
