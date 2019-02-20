@@ -3,6 +3,8 @@ Delta is a common channel that tracks requests from students/employers anonymous
 
 DevPost page: https://devpost.com/software/improvecommunication
 
+Parent Git Repo: https://github.com/SiddharthChoudhary/ImproveCommunication
+
 Project Walkthrough: https://www.youtube.com/watch?v=H6Ix98ANBew
 
 Project Members: 
