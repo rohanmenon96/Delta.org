@@ -2,6 +2,7 @@
 Delta is a common channel that tracks requests from students/employers anonymously to the institution.
 
 DevPost page: https://devpost.com/software/improvecommunication
+
 Project Walkthrough: https://www.youtube.com/watch?v=H6Ix98ANBew
 
 Project Members: 
